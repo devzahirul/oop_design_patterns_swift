@@ -60,3 +60,19 @@ image1.displayImage()
 image2.displayImage()
 image1.displayImage()
 image2.displayImage()
+
+//Output
+/*
+ Loading photo1
+ Displaying photo1
+ Displaying photo1
+ Loading photo2
+ Displaying photo2
+ Displaying photo1
+ Displaying photo2
+ Displaying photo1
+ Displaying photo1
+ Displaying photo2
+ Displaying photo1
+ Displaying photo2
+ */
