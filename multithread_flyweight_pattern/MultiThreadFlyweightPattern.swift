@@ -23,7 +23,7 @@ protocol ICoffeeFlavourFactory {
 
 final class ReduceMemoryFootprint: ICoffeeFlavourFactory {
     
-    private let _lock = NSLock.init()
+   
     private var _cache = [String: CoffeeFlavour]()
     
     private let queue = DispatchQueue.init(label: "queueforflavourcache",
