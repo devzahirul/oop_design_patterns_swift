@@ -21,6 +21,7 @@ protocol ButtonFactory {
 
 //A windows button
 final class WindowsButton: Button {
+ 
     func paint() {
         print("This is windows button")
     }
@@ -28,6 +29,7 @@ final class WindowsButton: Button {
 
 //A OSX button
 final class OSXButton: Button {
+ 
     func paint() {
         print("This is a OSX button")
     }
@@ -35,6 +37,7 @@ final class OSXButton: Button {
 
 //WindoButton Factory which will return a Window Type Button
 final class WindowsButtonFactory: ButtonFactory {
+ 
     func createButton() -> Button {
         return WindowsButton.init()
     }
@@ -43,6 +46,7 @@ final class WindowsButtonFactory: ButtonFactory {
 
 //OSXButton Factory which will return a OSX Type Button
 final class OSXButtonFactory: ButtonFactory {
+ 
     func createButton() -> Button {
         return OSXButton.init()
     }
@@ -50,6 +54,7 @@ final class OSXButtonFactory: ButtonFactory {
 
 //
 final class ButtonProvider {
+ 
     static func of(buttonFactory: ButtonFactory) -> Button {
         return buttonFactory.createButton()
     }
