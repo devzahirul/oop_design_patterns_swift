@@ -7,12 +7,14 @@ protocol AlertBridge {
 }
 
 final class AndroidAlert: AlertBridge {
+    
     func showAlert(text: String) {
         print("\(text) in Android")
     }
 }
 
 final class iOSAlert: AlertBridge {
+    
     func showAlert(text: String) {
         print("\(text) in iOS")
     }
@@ -24,6 +26,7 @@ protocol Alert {
 }
 
 class NativeAlert: Alert {
+    
     var alertBridge: AlertBridge?
     
     init(alertBridge: AlertBridge) {
