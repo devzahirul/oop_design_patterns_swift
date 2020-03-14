@@ -10,6 +10,7 @@ protocol ReadFormatable {
 }
 
 final class XMLReadFormater: ReadFormatable {
+    
     func getReadableString(data: [String : Any]) -> String? {
         return converXML(data: data)
     }
@@ -21,19 +22,18 @@ final class XMLReadFormater: ReadFormatable {
             xmlString += "\(val)"
             xmlString += "</\(key)>"
         }
-        
         return xmlString
     }
 }
 
 final class JSONReadFormater: ReadFormatable {
+    
     func getReadableString(data: [String : Any]) -> String? {
      return converJSON(data: data)
     }
     
     private func converJSON(data:[String:Any]) -> String {
         var jsonString = "{"
-        
         for (key,val) in data {
             jsonString += "\"\(key)\":"
             jsonString += "\"\(val),"
@@ -50,8 +50,7 @@ final class ReadableStringAdapter: ReadableString {
     init(readformatable: ReadFormatable) {
         self.readformatable = readformatable
     }
-    
-    
+   
     func from(data:[String:Any]) -> String? {
         return readformatable.getReadableString(data: data)
     }
@@ -60,6 +59,7 @@ final class ReadableStringAdapter: ReadableString {
 
 
 final class ReadableStringProvider {
+    
     private var readableStringAdapter: ReadableString!
     
     init(formater: ReadFormatable) {
